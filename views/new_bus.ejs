@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+
+<div class="adj">
+	<h1 class="a">Bus stops</h1>
+	<br></br>
+	<form method="POST" action="/bus/imd">
+	   <div class="mb-3">
+		<label class="form-label">Bus No</label>
+		<input type="number"  class="form-control" name="bno">
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">No of Station</label>
+		<input type="number"  class="form-control" name="s[nos]" max="4" required>
+	  </div>
+	  <button>Submit</button>
+     </form>
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+<div class="a">
+<br>
+<h1>Bus Details</h1>
+        <br></br>
+		<div class="f">
+		
+		   
+			<form class="form-inline" id="form" action="/bus/search" method="POST" >
+			<input class="form-control mr-sm-2" type="number" placeholder="Search by bus number" aria-label="Search" name="n">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+		
+
+         <div class="flt">
+		       <a href="/bus/new"><button class="btn btn-success">Add new Bus</button></a>
+         </div>		 
+		
+		<div id="table">
+		
+				<table class="table">
+						  <thead class="thead-light">
+							<tr>
+							  <th scope="col">#</th>
+							  <th scope="col">BusNo</th>
+							  <th scope="col">Station 1</th>
+							  <th scope="col">Station 2</th>
+							  <th scope="col">Station 3</th>
+							  <th scope="col">Station 4</th>
+							  <th scope="col"></th>
+							  <th scope="col"></th>
+							</tr>
+						  </thead>
+						  <tbody>
+						  
+						  <%
+                              count=0;
+                              busno.forEach(function(busno)
+							  {  %>
+								<tr>
+									  <td scope="row"><%= count+1 %></th>
+									  <td><%= busno %></td>
+									 <%
+									 var loop = station[count];
+									  loop.forEach(function(loop)
+									  {%>
+									      <td><%= loop %></td>
+										 
+									 <% });
+									 var x = loop.length;
+									 while(4-x>0)
+									 { %>
+									  <td>-</td>
+									  <%
+									  x=x+1;
+									 }
+									%>
+									<td style="padding-top:5px"><a href="/bus/<%= busno %>/edit"><button class="btn btn-primary">Edit</button></a></td>
+									  <td><a id="exc" href="/bus/<%= busno %>/delete"> <i class="fa fa-times"></i></a></td>
+								</tr>
+									
+							 <%
+							 count=count+1;
+							 });							  
+						  %>
+							
+							
+						  </tbody>
+				</table>
+		
+		
+		
+		</div>
+</div>
+
+<%- include('partials/footer') %>

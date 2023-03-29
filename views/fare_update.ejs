@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+
+<div class="adj">
+	<h1 class="a">Adding New Route</h1>
+	<br></br>
+	<form method="POST" action="/fare/<%= key.toString() %>?_method=PUT">
+	<div class="mb-3">
+		<label class="form-label">Stop no</label>
+		<input type="number" class="form-control" name="num" value="<%= key %>" >
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">Lattitude</label>
+		<input type="number" class="form-control" name="c[lat]" value="<%= r.lat%>" step="0.00001">
+	  </div>
+	 <div class="mb-3">
+		<label  class="form-label">Longitude</label>
+		<input type="number" class="form-control"  name="c[long]" value="<%= r.long%>" step="0.00001">
+	 </div>  
+	  <div class="mb-3">
+		<label class="form-label">Stop Name</label>
+		<input type="text" class="form-control" name="c[name]" value="<%= r.name %>">
+	  </div>
+	 <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+
+<%- include('partials/footer') %>

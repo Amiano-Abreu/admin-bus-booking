@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="adj">
+	<h1 class="a">Adding Customer Travel History</h1>
+	<br></br>
+	<form method="POST" action="/cust_details">
+	  <div class="mb-3">
+		<label class="form-label">Arrival time</label>
+		<input type="text" class="form-control" name="c[arrival_time]" >
+	  </div>
+	 <div class="mb-3">
+		<label  class="form-label">Departure time</label>
+		<input type="text" class="form-control"  name="c[departure_time]" >
+	 </div>  
+	  <div class="mb-3">
+		<label class="form-label">Customer_Name</label>
+		<input type="text" class="form-control" name="k[c_name]">
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">Source</label>
+		<input type="text" class="form-control" name="k[source]">
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">Destination</label>
+		<input type="text" class="form-control" name="k[destination]">
+	  </div>
+	 <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+<%- include('partials/footer') %>

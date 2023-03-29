@@ -1,0 +1,40 @@
+<html>
+<head>
+		<link type="text/css" rel="stylesheet" href="/assets/css/r.css">
+	<link type="text/css" rel="stylesheet" href="/assets/css/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css"> 
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-tarPOST="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto first">
+      <li class="nav-item ">
+	  
+	     <% if(!current)
+        {	%>	  
+        <a class="nav-link text-white " href="/login">Login <span class="sr-only">(current)</span></a>
+      </li>
+	   <li class="nav-item ">
+        <a class="nav-link text-white " href="/signup">Sign Up <span class="sr-only">(current)</span></a>
+      </li>
+	   <li class="nav-item">
+	   <%}
+	   else
+	   {%>
+	    <a class="nav-link text-white " href="/">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+        <a class="nav-link text-white " href="/logout">Log Out <span class="sr-only">(current)</span></a>
+       <%}%>
+	  </li>
+      
+      
+    
+  </div>
+</nav>

@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+<div class="a">
+<br>
+<h1>Customer Details</h1>
+        <br></br>
+		<div class="f">
+		
+		   
+			<form class="form-inline" id="form" action="/customer/name %>" method="POST" >
+			<input class="form-control mr-sm-2" type="text" placeholder="Search by customer name" aria-label="Search" name="n">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+		
+
+         <div class="flt">
+		       <a href="/customer/new"><button class="btn btn-success">Add new Customer</button></a>
+         </div>		 
+		
+		<div id="table">
+		
+				<table class="table">
+						  <thead class="thead-light">
+							<tr>
+							  <th scope="col">#</th>
+							  <th scope="col">Name</th>
+							  <th scope="col">Mobile No</th>
+							  <th scope="col">Rfid</th>
+							  <th scope="col">Balance(Rs)</th>
+							  <th scope="col"></th>
+							  <th scope="col"></th>
+							  
+							</tr>
+						  </thead>
+						  <tbody>
+						  
+						  <%
+                              count=1;
+                              key.forEach(function(key)
+							  {     console.log(key);
+									  %>
+									  <tr>
+									  <th scope="row"><%= count %></th>
+									  <td><%= value[key]["name"] %></td>
+									  <td><%= value[key]["m_no"] %></td>
+									  <td><%= key %></td> 	 
+									  <td><%= value[key]["balance"]+"/-" %></td> 	 
+									  <td style="padding-top:5px"><a href="/customer/<%= key %>/edit"><button class="btn btn-primary">Edit</button></a></td>
+									  <td><a id="exc" href="/customer/<%= key %>/delete"> <i class="fa fa-times"></i></a></td>
+									</tr>
+									
+							 <%
+							 count=count+1;
+							 });							  
+						  %>
+							
+							
+						  </tbody>
+				</table>
+		
+		
+		
+		</div>
+</div>
+
+<%- include('partials/footer') %>

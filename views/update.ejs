@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="adj">
+	<h1 class="a">Adding New Customer</h1>
+	<br></br>
+	
+	<form  action="/customer/<%= id %>?_method=PUT" method="POST">
+	  <div class="mb-3">
+		<label class="form-label">Customer Name</label>
+		<input type="text" class="form-control" name="c[name]" value="<%= r.name%>">
+	  </div>
+	 <div class="mb-3">
+		<label  class="form-label">Email address</label>
+		<input type="text" class="form-control"  name="c[email]" value="<%= r.email%>">
+	 </div>  
+	  <div class="mb-3">
+		<label class="form-label">Mobile Number</label>
+		<input type="number" class="form-control" name="c[m_no]" value="<%= r.m_no %>">
+	  </div>
+	 
+	  
+	  
+	   <div class="mb-3">
+		<label class="form-label">RFID</label>
+		<input type="text" class="form-control" name="rid" value="<%= id %>">
+	  </div>
+	  
+	   <div class="mb-3">
+		<label class="form-label">balance</label>
+		<input type="number" class="form-control" name="c[balance]" value="<%= r.balance %>">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+<%- include('partials/footer') %> 

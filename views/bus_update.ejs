@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+
+<div class="adj">
+	<h1 class="a">Bus stops</h1>
+	<br></br>
+	<form method="POST" action="/bus/<%= r %>?_method=PUT">
+	   <div class="mb-3">
+		<label class="form-label">Bus No</label>
+		<input type="number"  class="form-control" name="bno" value="<%= r %>">
+	  </div>
+	  <%
+	  count=0;
+	  while(count<st.length)
+	  {%>
+	  <div class="mb-3">
+		<label class="form-label">Station <%= count+1 %></label>
+		<input type="text"  class="form-control" name="s[<%= count+1 %>]" value="<%= st[count] %>">
+	  </div>
+	  <%
+	  count=count+1;
+	  }
+	  %>
+	  <button>Submit</button>
+     </form>
+</div>
+
+
+<%- include('partials/footer') %>
